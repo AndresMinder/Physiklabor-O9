@@ -1,0 +1,88 @@
+%Dokumentklasse
+\documentclass[a4paper,11pt]{scrreprt}
+
+% ============= Packages =============
+% Standard Packages
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{blindtext}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{wrapfig}
+\usepackage{ulem}
+\usepackage[bottom=3.5cm, top=2cm, left=2cm, right=2cm]{geometry}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{subfigure}
+\usepackage{float}
+\usepackage{framed,color}
+
+
+% zusätzliche Schriftzeichen der American Mathematical Society
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+% Literaturverzeichnisstil
+\bibliographystyle{unsrt}
+
+\parindent0pt
+
+% ============= Kopf- und Fußzeile =============
+\pagestyle{fancy}
+%
+\fancyhead[L]{\includegraphics[scale=1]{Bilder/FHNW.jpg}}
+\fancyhead[C]{EIT}
+\fancyhead[R]{\slshape Physiklabor}
+%%
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+%
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% ============= Dokumentbeginn =============
+
+\begin{document}
+%Seiten ohne Kopf- und Fußzeile sowie Seitenzahl
+
+\include{00a_Laborheft}
+
+\include{00b_titelblatt}
+ 
+\include{00c_Inhalt}
+
+% ab hier ist diese Konvention für die Fusszeile eingestellt
+\fancyfoot[L]{glaL4}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\today}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\include{01_Arbeitsgrundlagen}
+
+\include{02_Durchfuehrung}
+
+\include{03_Auswertung}
+
+\include{04_Fehlerrechnung}
+
+\include{05_Resultate_und_Diskussion}
+
+\include{06_Begriffsexplikation}
+
+\include{07_Plagiatserklaerung}
+
+%Literaturverzeichnis
+\addcontentsline{toc}{chapter}{Literaturverzeichnis}
+\bibliography{Literaturverzeichnis/lit_w6}
+
+\include{08_Anhang}
+
+\end{document}
