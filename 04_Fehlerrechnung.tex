@@ -3,13 +3,41 @@
 \thispagestyle{fancy}
 % =================================================================
 \section{Statistischer Fehler}
-Die Aufsummierung der quadrierten partiellen Ableitungen (nach den fehlerbehafteten Grössen) als Diskriminante unter der Wurzel ergibt den statistischen Fehler.\\
+Der statistische Fehler lässt sich hier folgend berechnen:
+\begin{enumerate}
+\item Die Gleichung \ref{eq:1} muss nach der Dicke/Lochdurchmesser \textit{d} des Spaltes/Loches, resp. des Antispaltes/-loches aufgelöst werden.
 \begin{equation}
-s=\sqrt{\left( \frac{\partial d}{\partial f} \cdot s_{f}\right)^{2} +\left( \frac{\partial d}{\partial a_{m}} \cdot s_{a_{m}}\right)^{2}}
-\label{eq:p3}
+\Large
+a_{m}=f\cdot\tan\left( \arcsin\left[ \frac{m\cdot\lambda}{d}\right] \right)\qquad \Rightarrow \qquad \uuline{d=\frac{m*\lambda}{sin(arctan(\frac{a_{m}}{f}))}}
 \end{equation}
+\item Nun kann für jede einzelne Messreihe des Interferenzmusters die Werte eingesetzt und anschließend der Mittelwert bestimmt werden. Für die Messreihe \textbf{Spalt1 ohne Linse} (\nameref{chap:auswertung} \ref{fig:spalt1_ohneLinse}) entspricht dies dem Wert $d = 2.0138e-04$. Daraus ergibt sich für den Fehler:
+\begin{equation}
+\Large
+s_{d}=\sqrt{\frac{\sum\nolimits_{m=-10}^{10}(d(m,a_{mn})-\bar{d})}{420}}
+\end{equation}
+Dabei steht der Eingabeparameter m in der Summe für die Ordnungszahl des Interferenzmusters.
+\end{enumerate}
+Nach dieser Vorgehensweise wird der statistische Fehler berechnet, da der Fehler eher aus Ablesefehler besteht. Daraus ergeben sich folgende Fehler für die verschiedenen Messreihen:
+\\[0.5cm]
+\begin{tabular}{ll}
+\textbf{Spalt 1 ohne Linse:} & $\uuline{\pm\;6.29173e-07}$ \\ 
+\textbf{Spalt 1 mit Linse:} & $\uuline{\pm\;8.58246e-07}$ \\ 
+\textbf{Spalt 2 ohne Linse:} & $\uuline{\pm\;5.48061e-07}$ \\ 
+\textbf{Spalt 2mit Linse:} & $\uuline{\pm\;1.29683e-05}$ \\ 
+\textbf{Antispalt 1 ohne Linse:} & $\uuline{\pm\;1.37275e-05}$ \\ 
+\textbf{Antispalt 1 mit Linse:} & $\uuline{\pm\;2.01232e-09}$ \\ 
+\textbf{Antispalt 2 ohne Linse:} & $\uuline{\pm\;8.85494e-06}$ \\ 
+\textbf{Antispalt 2 mit Linse:} & $\uuline{\pm\;4.23203e-06}$ \\ 
+\textbf{Loch 1 ohne Linse:} & $\uuline{\pm\;7.43191e-07}$ \\ 
+\textbf{Loch 1 mit Linse:} & $\uuline{\pm\;5.76038e-07}$ \\ 
+\textbf{Loch 2 ohne Linse:} & $\uuline{\pm\;9.30809e-07}$ \\ 
+\textbf{Loch 2 mit Linse:} & $\uuline{\pm\;1.62552e-06}$ \\ 
+\end{tabular} 
+\\[0.5cm]
+Die Fits für die Strichgitter ergaben keine schöne Ergebnisse, weshalb diese weggelassen wurden.
 
+\newpage
 \section{Systematischer Fehler}
-Das einige Element in diesem Versuch, welche eine systematische Fehlerquelle wäre, ist der He-Ne-Laser. Da dieser nach \textit{Leif Physik} \cite{PhysikkeineAngaben} mit den höheren und tieferen Energieniveaus der Helium- und Neonatomen arbeitet, ist dessen Unsicherheit auf die Wellenlänge des roten Lichts vernachlässigbar klein. 
+Das einige Element in diesem Versuch, welche eine systematische Fehlerquelle wäre, ist der He-Ne-Laser. Da dieser nach \textit{Leif Physik} \cite{PhysikkeineAngaben} mit den höheren und tieferen Energieniveaus der Helium- und Neonatomen arbeitet, ist dessen Unsicherheit auf die Wellenlänge des roten Lichts vernachlässigbar klein. Somit ist keine Gauß'sche Fehlerfortpflanzung nötig.
 \section{Absoluter Fehler}
 Statistischer und systematischer Fehler werden quadriert und als Diskriminante unter der Wurzel aufsummiert. Daraus ergibt sich der absolute Fehler jeder Messung. Da aber der systematische Fehler vernachlässigt wird, wäre der absolute Fehler equivalent zum statistischen Fehler.
